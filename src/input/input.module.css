@@ -1,0 +1,27 @@
+.button{
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    color: #5E6C84;
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 5px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+
+.inputShow{
+    width: 260px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.inputHide{
+    display: none;
+}

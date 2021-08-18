@@ -1,0 +1,38 @@
+.dropdown{
+    margin-top: 30px;
+    
+}
+
+.list{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 125px;                /*не получается стилизовать блок с .list, чтобы при уменьшении 
+                                 экрана, он не выходил за пределы ширины контейнера :((((*/
+}
+
+
+.list a{
+    text-decoration:none;
+    color: #000000;
+    padding-right: 30px; 
+}
+
+.list a:hover{
+    color:#95a4ad;
+}
+
+
+.arrow{
+   cursor: pointer;
+   margin-left: 15px;
+   margin-right: 25px;
+}
+
+
+.arrow:hover{
+    color:#95a4ad;
+}

@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #0067A3;
+    font-size: 18px;
+    line-height: 21px;
+    color:  #FFFFFF;
+}
+
+.footer p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer :nth-child(2){
+    padding-right: 580px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #6cb1d9;
+}
+
+/* .footer a :hover{
+    color: #054163;  /* не работает *.
+} */
+
