@@ -1,19 +1,21 @@
 .main{
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
-    margin: 15px; 
     position: fixed;
     width: 100%;
     height: 100%; 
-    /* background-color: aqua;   */
+    background-color: #0079BF;
 }
 
 .board{
-    display: inline-block;
-    justify-content: space-between; 
-    width: 280px;
-    height: 200px;
+    display: inline;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 22%;
+    height: max-content;
     border-radius: 10px;
     background-color: #EBECF0;
     color: #000000;
@@ -22,20 +24,24 @@
     padding-top: 15px;
 }
 
-.smallBoard{
+/* .smallBoard{
     display: flex;
     flex-direction: column;
-}
+} */
 
 .task{
-    display: flex;
-    justify-content: center;
+    text-align: left;
+    padding: 5px;
     background-color: #FFFFFF;
-    border-radius: 10px;
-    width: 260px;
+    border-radius: 5px;
+    width: 90%;
     margin: 0 auto; 
-    margin-top: 15px;
+    margin-top: 20px;
     cursor: pointer;
+}
+
+.task a{
     text-decoration: none;
+    color: #000000;
 }
 
