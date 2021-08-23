@@ -33,18 +33,18 @@ export default function TaskMove(props) {
 
     return (
         <>
-            {isOpened && <select onChange={handleSelect}>
+            {isOpened && <select className={css.select} onChange={handleSelect}>
                 {
                     props.sourceBoard.tasks.map(x =>
-                        <option key={x.id} value={x.id}>{x.content}</option>
+                        <option className={css.option} key={x.id} value={x.id}>{x.content}</option>
                     )
                 }
             </select>}
-            <button
+            <button 
                 type='submit'
                 className={css.button}
                 onClick={handleMove}>
-                {isOpened ? 'Submit' : '+ Add task'}
+                {isOpened ? 'Submit': '+ Add task'}
             </button>
         </>
     )

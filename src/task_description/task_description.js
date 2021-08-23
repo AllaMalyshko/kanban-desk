@@ -16,11 +16,13 @@ export default function TaskDescription (){
       }, []);
 
     return(
-        task && <div className={css.description}>
-            <h2 className={css.title}>{task.content}</h2>
-            <p className={css.text}>{task.description}</p>
-            <p className={css.text}>{task.create}</p>
-            <Link to='/'><span className={css.cross}>&#215;</span></Link>
+        task && <div className={css.description_block}>
+            <div className={css.description_content}>
+                <h2 className={css.title}>{task.content}</h2>
+                <p className={css.date}>Create: {task.create}</p>
+                <Link className={css.cross} to='/'><span >&#215;</span></Link>
+                <p className={css.text}>{task.description}</p>
+            </div>
         </div>
     )
 }

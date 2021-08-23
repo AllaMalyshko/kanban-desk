@@ -66,7 +66,7 @@ const Main = (props) => {
     return (
         <Switch>
             <Route exact path='/'>
-                <div className={css.main}>
+                <div className={props.isMobileScreen ? css.smallMain : css.main}>
                     {
                         boards.map((board, index) =>
                             <div key={board.id} className={props.isMobileScreen ? css.smallBoard : css.board}

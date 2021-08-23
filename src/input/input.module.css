@@ -13,15 +13,12 @@
 }
 
 
-.inputShow{
-    width: 260px;
-    border-radius: 10px;
+.input{
+    width: 90%;
+    border-radius: 5px;
     border: none;
     margin-top: 15px;
     font-size: 18px;
     line-height: 21px;
-}
-
-.inputHide{
-    display: none;
+    padding: 5px;
 }

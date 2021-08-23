@@ -12,7 +12,7 @@ function App() {
     <Router>
         <div className="App">
           <Header isMobileScreen={isMobileScreen} />
-          <Main />         
+          <Main isMobileScreen={isMobileScreen} />         
           <Footer />
         </div>
     </Router>

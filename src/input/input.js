@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 
 export default function Input (props){
     const [isOpened, setIsOpened] = useState(false);
+
     const handleInput = () => {
         if(isOpened && taskName) {
            
@@ -30,7 +31,7 @@ export default function Input (props){
                 placeholder={'Add your new task here'}
                 value={taskName}
                 onChange={handleInputChange}
-                className={css.inputShow}
+                className={css.input}
                 >
             </input>}
             <button 

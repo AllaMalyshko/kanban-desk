@@ -1,21 +1,42 @@
-.description{
-  position: fixed;
+.description_block{
+  margin: 0 auto;
   width: 100%;
   height: 100%;
-  /* background-color: aquamarine; */
+  position: absolute;
+  background-color: #0079BF;
+  display: flex;
+  justify-content: center;
+
 }
+
+.description_content{
+  background-color: #FFFFFF;
+  width: 96%;
+  height: 80%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+
+
 
 .title{
  font-size: 24px;
  line-height: 28px;
+
 }
 
 .text{
-
+  background-color: red;
 }
 
 .cross {
-    font-size: 32px;
+    font-size: 45px;
     text-decoration: none;
+    color: #000000;
 }
+
 
