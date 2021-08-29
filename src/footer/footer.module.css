@@ -11,8 +11,8 @@
 }
 
 .footer p{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .footer :nth-child(2){
@@ -24,7 +24,6 @@
     color: #6cb1d9;
 }
 
-/* .footer a :hover{
-    color: #054163;  /* не работает *.
-} */
-
+.smallFooter{
+    display: none;
+}

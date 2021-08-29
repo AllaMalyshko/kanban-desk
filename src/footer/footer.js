@@ -1,13 +1,11 @@
 import css from './footer.module.css'
 
-
-
-export default function Footer (){
+export default function Footer (props){
     return(
-        <div className={css.footer}>
-            <p>Active tasks: {}</p>
-            <p>Finished tasks: </p>
-            <p>Kanban board by <a href='#'>Alla Malyshko</a> </p>
+        <div className={props.isMobileScreen ? css.smallFooter : css.footer}>
+            <p>Active tasks: {props.activeCount}</p>
+            <p>Finished tasks: {props.finishedCount}</p>
+            <p>Kanban board by <a href='#'>Alla Malyshko</a>, {new Date().getFullYear()}</p>
         </div>
     )
 }

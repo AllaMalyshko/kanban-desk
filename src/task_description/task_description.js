@@ -20,8 +20,8 @@ export default function TaskDescription (){
             <div className={css.description_content}>
                 <h2 className={css.title}>{task.content}</h2>
                 <p className={css.date}>Create: {task.create}</p>
-                <Link className={css.cross} to='/'><span >&#215;</span></Link>
                 <p className={css.text}>{task.description}</p>
+                <Link className={css.cross} to='/'><span >&#215;</span></Link>
             </div>
         </div>
     )

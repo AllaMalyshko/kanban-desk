@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './main.module.css';
-import { MockData } from '../server_response_mock'
 import Input from '../input'
 import TaskDescription from '../task_description/task_description';
 import { Link, Switch, Route } from 'react-router-dom'
 import TaskMove from '../taskMove';
 
 const Main = (props) => {
-    const [boards, setBoards] = useState(MockData)
+    const [boards, setBoards] = useState(props.boards)
     const [currentBoard, setCurrentBoard] = useState(null)
     const [currentTask, setCurrentTask] = useState(null)
+
+    useEffect(() => {
+       const storedBoards = localStorage.getItem('boards')
+       if(storedBoards) {
+           setBoards(JSON.parse(storedBoards))
+       }
+      }, []);
 
     function dragOverCardHandler(e) {
         e.preventDefault()
@@ -22,18 +28,15 @@ const Main = (props) => {
         e.target.style.boxShadow = 'none'
     }
 
-
     function dragStartHandler(e, board, task) {
         setCurrentBoard(board)
         setCurrentTask(task)
         e.target.style.color = '#6cb1d9'
     }
 
-
     function dragEndHandler(e) {
         e.target.style.color = '#000000'
     }
-
 
     const addNewTask = (boardId, taskName) => {
         const currentBoard = boards.find(b => b.id === boardId);
@@ -45,8 +48,9 @@ const Main = (props) => {
             content: taskName,
         };
 
-        currentBoard.tasks.push(newTask);
-        setBoards(boards.map(b => b));
+        currentBoard.tasks.push(newTask)
+        setBoards(boards.map(b => b))
+        saveToLocalStorage()
     }
 
     const moveTask = (sourceBoardId, boardId, task) => {
@@ -57,6 +61,30 @@ const Main = (props) => {
         const currentBoard = boards.find(b => b.id === boardId);
         currentBoard.tasks.push(task);
         setBoards(boards.map(b => b));
+
+        const inProgressBoard = getInProgessBoard();
+        if(inProgressBoard.id === sourceBoard.id || inProgressBoard.id === currentBoard.id) {
+            props.activeCountChanged(inProgressBoard.tasks.length)
+        }
+
+        const finishedBoard = getFinishedBoard();
+        if(finishedBoard.id === sourceBoard.id || finishedBoard.id === currentBoard.id) {
+            props.finishedCountChanged(finishedBoard.tasks.length)
+        }
+
+        saveToLocalStorage()
+    }
+
+    const saveToLocalStorage = () => {
+        localStorage.setItem('boards', JSON.stringify(boards))
+    }
+
+    const getInProgessBoard = () => {
+        return boards.find(x => x.title === 'In Progress');
+    }
+
+    const getFinishedBoard = () => {
+        return boards.find(x => x.title === 'Finished');
     }
 
     const formTaskUrl = (task) => {
